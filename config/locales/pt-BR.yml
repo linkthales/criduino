@@ -1,0 +1,29 @@
+pt-BR:
+ activerecord:
+  models:
+   user: Usuário
+  attributes:
+   user:
+    email: E-mail
+    full_name: Nome completo
+    password: Senha
+    password_confirmation: Confirmação de senha
+
+ users:
+  new:
+   title: Cadastro
+  edit:
+   title: Editar perfil
+  show:
+   title: 'Perfil: %{user_name}'
+   edit: 'Editar perfil'
+   back: 'Home'
+
+ links:
+  back: Voltar
+
+ layout:
+  signup: Cadastro
+
+ general:
+  form_error: Há erros no formulário.
