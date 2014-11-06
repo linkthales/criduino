@@ -1,10 +1,10 @@
 class UserSessionsController < ApplicationController
   def new
-    @session = UserSession.new(session)
+    @session = UserSession.new
   end
   
   def create
-    @session = UserSession.new(session, params[:user_session])
+    @session = UserSession.new(session)
 	if @session.authenticate
 	  redirect_to root_path, :notice => t('flash.notice.signed_in')
 	else
