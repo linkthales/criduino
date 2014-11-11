@@ -1,0 +1,21 @@
+<% if @arduino.errors.any? %>
+	<div id="error_explanation">
+		<%= t 'general.form_error' %>
+	</div>
+<% end %>
+
+<%= form_for @arduino do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= error_tag @arduino, :name %>
+	</p>
+	<p>
+		<%= f.label :mac %>
+		<%= f.text_field :mac %>
+		<%= error_tag @arduino, :mac %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

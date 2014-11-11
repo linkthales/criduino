@@ -1,8 +1,14 @@
 pt-BR:
  activerecord:
+  errors:
+   messages:
+    record_invalid: Registro inválido.
   models:
    user: Usuário
   attributes:
+   arduino:
+    mac: Mac Address
+    name: Nome
    user:
     email: E-mail
     full_name: Nome completo
@@ -12,9 +18,12 @@ pt-BR:
  users:
   new:
    title: Cadastro
+   success: Usuário cadastrado com sucesso.
   edit:
+   success: Usuário editado com sucesso.
    title: Editar perfil
   show:
+   arduinos: 'Gerenciar arduinos'
    title: 'Perfil: %{user_name}'
    edit: 'Editar perfil'
    back: 'Home'
@@ -25,6 +34,25 @@ pt-BR:
   new:
    title: 'Login'
    sign_up: 'Cadastre-se'
+
+ arduino:
+  edit:
+   name: Arduino
+ arduinos:
+  arduino:
+   owner_html: 'Usuário: %{owner}'
+   mac: 'Mac Address: %{mac}'
+   destroy: Remover
+   edit: Editar
+  new:
+   name: Cadastrar Arduino
+  index:
+   name: Arduinos
+   ardname: Nome
+   mac: Mac address
+
+ dialogs:
+  destroy: 'Você tem certeza que quer remover o arduino?'
 
  signup_mailer:
   confirm_email:
@@ -42,8 +70,13 @@ pt-BR:
   back: Voltar
 
  layout:
+  new_arduino: Cadastrar arduino
+  my_profile: Meu perfil
   signup: Cadastro
   login: Login
+  signin: Login
+  my_page: Página de Controle
+  signout: Logout
 
  general:
   form_error: Há erros no formulário.
@@ -64,4 +97,9 @@ pt-BR:
 
  flash:
   notice:
+   arduino_updated: 'Arduino atualizado com sucesso.'
+   arduino_created: 'Arduino criado com sucesso.'
    signed_in: 'Logado'
+   signed_out: 'Até mais!'
+  alert:
+   needs_login: 'Para continuar você necessita estar logado'

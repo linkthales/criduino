@@ -1,0 +1,17 @@
+<h1><%= t '.name' %></h1>
+ 
+<table>
+  <tr>
+    <th><%= t '.ardname' %></th>
+    <th><%= t '.mac' %></th>
+  </tr>
+ 
+  <% @arduinos.each do |arduino| %>
+    <% if belongs_to_user(arduino) %>
+      <tr>
+        <td><%= arduino.name %></td>
+        <td><%= arduino.mac %></td>
+      </tr>
+	<% end %>
+  <% end %>
+</table>
