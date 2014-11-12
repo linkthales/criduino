@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141030163115) do
+ActiveRecord::Schema.define(:version => 20141110180011) do
+
+  create_table "arduinos", :force => true do |t|
+    t.string   "mac"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.string   "name"
+  end
+
+  add_index "arduinos", ["user_id"], :name => "index_arduinos_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "full_name"

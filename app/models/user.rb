@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :arduinos, :dependent => :destroy
+
   attr_accessible :email, :full_name, :password, :password_confirmation
   
   validates_presence_of :email, :full_name
-  validates_length_of :password, :minimum => 6, :allow_blank => false
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   validates_uniqueness_of :email
   
@@ -29,6 +30,8 @@ class User < ActiveRecord::Base
   end
   
   def self.authenticate(email, password)
-    confirmed.find_by_email(email).try(:authenticate, password)
+    confirmed.
+	find_by_email(email).
+	try(:authenticate, password)  
   end
 end
