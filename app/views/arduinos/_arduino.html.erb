@@ -1,17 +1,22 @@
-<article class="arduino">
+<<article class="arduino">
   <% if belongs_to_user(arduino) %>
-    <h2><%= link_to arduino.name, arduino.route %></h2>
+      <h2><%= link_to arduino.name, arduino.route %></h2>
     <span class="created">
       <%= t '.owner_html', :owner => arduino.user.full_name %>
     </span>
-    <p>
+      <p>
 	  <span class="mac address">
 	    <%= t '.mac', :mac => arduino.mac %>
 	  </span>
-    </p>
-	<ul>
-	  <li><%= link_to t('.edit'), edit_arduino_path(arduino.route) %></li>
-      <li><%= link_to t('.destroy'), arduino_path(arduino.route), :method => :delete, :data => {:confirm => t('dialogs.destroy')} %></li>
-    </ul>
+      </p>
+      <p>
+        <%= content_tag(:button,"Ativar",:type=>:nil)%>
+        &nbsp;
+        <%= content_tag(:button,"Desativar",:type=>:nil)%>
+      </p>
+      <ul>
+        <li><%= link_to t('.edit'), edit_arduino_path(arduino.route) %></li>
+        <li><%= link_to t('.destroy'), arduino_path(arduino.route), :method => :delete, :data => {:confirm => t('dialogs.destroy')} %></li>
+      </ul>
   <% end %>
 </article>
