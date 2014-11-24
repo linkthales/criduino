@@ -1,6 +1,8 @@
 class ArduinosController < ApplicationController
+  helper :all
   before_filter :require_authentication, :only => [:new, :edit, :create, :update, :destroy]
-  
+
+
   def index
     @arduinos = Arduino.all
   end
@@ -43,5 +45,18 @@ class ArduinosController < ApplicationController
     @arduino.destroy
 
 	redirect_to arduinos_url
+  end
+
+  def leitura
+    require 'socket'
+    server = TCPServer.new 3000
+    print("teste transudo")
+    loop do
+      client = server.accept    # Wait for a client to connect
+      s = client.readline
+      puts s
+      s.printf
+      client.close
+    end
   end
 end

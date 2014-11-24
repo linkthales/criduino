@@ -11,6 +11,8 @@ Criduino::Application.routes.draw do
 	resource :user_sessions, :only => [:create, :new, :destroy]
   end
 
+  post "arduinos/leitura" => "arduinos#leitura"
+
   match '/:locale' => 'home#index', :locale => LOCALES
   root :to => "home#index"
 end

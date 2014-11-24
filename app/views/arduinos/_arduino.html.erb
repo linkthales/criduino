@@ -1,4 +1,4 @@
-<<article class="arduino">
+<article class="arduino">
   <% if belongs_to_user(arduino) %>
       <h2><%= link_to arduino.name, arduino.route %></h2>
     <span class="created">
@@ -10,7 +10,7 @@
 	  </span>
       </p>
       <p>
-        <%= content_tag(:button,"Ativar",:type=>:nil)%>
+        <%= button_to "Leitura", :action => "leitura", :controller => "arduinos", remote: true %>
         &nbsp;
         <%= content_tag(:button,"Desativar",:type=>:nil)%>
       </p>
