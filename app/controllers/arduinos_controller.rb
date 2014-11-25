@@ -49,14 +49,30 @@ class ArduinosController < ApplicationController
 
   def leitura
     require 'socket'
-    server = TCPServer.new 3000
-    print("teste transudo")
+    require 'openssl'
+    server = TCPServer.new('192.168.0.107', 3000)
+    i = 0
+    #server = TCPServer.new 3000
+    print("teste transudo1 ")
     loop do
-      client = server.accept    # Wait for a client to connect
-      s = client.readline
-      puts s
-      s.printf
-      client.close
+      #client = server.accept    # Wait for a client to connect
+      #data = client.recvfrom(20)[0].chomp
+      #print(data)
+      #client.close
+      print("teste transudo2 ")
+      Thread.start(server.accept) do |client|
+        chain = client.gets
+        print("teste transudo3 ")
+        print(chain)
+        client.puts(1)
+        break
+        #if (chain == @mac)
+        #  print("teste transudo4 ")
+        #  client.puts(1)
+        #  i = 1
+        #end
+      end
+      print("teste transudinha ")
     end
   end
 end
