@@ -2,5 +2,11 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Rails criduino: development" uuid="d0ab2c53-5364-4d39-8d4f-0c93401dd952" />
+    <data-source name="Rails criduino: test" uuid="538dac96-c61a-4a72-8623-37d6c5a30142">
+      <user-name>dgt</user-name>
+      <user-password>df9bdf98df99df9edf9fdf9c</user-password>
+      <schema-pattern>criduino_test.pg_catalog criduino_test.public</schema-pattern>
+      <default-schemas>criduino_test.pg_catalog criduino_test.public</default-schemas>
+    </data-source>
   </component>
 </project>
