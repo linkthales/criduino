@@ -52,24 +52,15 @@ class ArduinosController < ApplicationController
     require 'openssl'
     @arduino = current_user.arduinos.find(params[:id])
     server = TCPServer.new('192.168.0.103', 3000)
-    print("teste transudo1 ")
     loop do
-      print("teste transudo2 ")
       Thread.start(server.accept) do |client|
         chain = client.gets
-        print("teste transudo3 ")
-        print(@arduino.mac)
         maca = @arduino.mac + "\r\n"
-        print(maca)
-        print(chain)
-        print(maca)
         if (chain == maca)
-          print("teste transudo4 ")
           client.puts(1)
           server.close
         end
       end
-      print("teste transudinha ")
       client.close
     end
   end
@@ -79,24 +70,15 @@ class ArduinosController < ApplicationController
     require 'openssl'
     @arduino = current_user.arduinos.find(params[:id])
     server = TCPServer.new('192.168.0.103', 3000)
-    print("teste transudo1 ")
     loop do
-      print("teste transudo2 ")
       Thread.start(server.accept) do |client|
         chain = client.gets
-        print("teste transudo3 ")
-        print(@arduino.mac)
         maca = @arduino.mac + "\r\n"
-        print(maca)
-        print(chain)
-        print(maca)
         if (chain == maca)
-          print("teste transudo4 ")
           client.puts(0)
           server.close
         end
       end
-      print("teste transudinha ")
       client.close
     end
   end

@@ -10,8 +10,8 @@
 	  </span>
       </p>
       <p>
-        <%= link_to "Leitura", :action => "leitura", :controller => "arduinos", remote: true %>
-        <%= link_to "Escrita", :action => "escrita", :controller => "arduinos", remote: true %>
+        <%= link_to "Ativar", :action => "leitura", :controller => "arduinos", remote: true %>
+        <%= link_to "Desativar", :action => "escrita", :controller => "arduinos", remote: true %>
       </p>
       <ul>
         <li><%= link_to t('.edit'), edit_arduino_path(arduino.route) %></li>
