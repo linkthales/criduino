@@ -10,9 +10,8 @@
 	  </span>
       </p>
       <p>
-        <%= button_to "Leitura", :action => "leitura", :controller => "arduinos", remote: true %>
-        &nbsp;
-        <%= content_tag(:button,"Desativar",:type=>:nil)%>
+        <%= link_to "Leitura", :action => "leitura", :controller => "arduinos", remote: true %>
+        <%= link_to "Escrita", :action => "escrita", :controller => "arduinos", remote: true %>
       </p>
       <ul>
         <li><%= link_to t('.edit'), edit_arduino_path(arduino.route) %></li>
